@@ -1,4 +1,4 @@
-*body {
+body {
     margin: 0;
     padding: 0;
 }
@@ -15,6 +15,11 @@ header {
 }
 header h1 {
     margin: 0;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color:rgb(24, 80, 13);
+    color: rgb(245, 65, 0);
 }
 nav {
     display: flex;
@@ -97,4 +102,142 @@ nav a:hover {
 }
 h2 {
     text-align: center;
+}
+table,th,td {
+    border: 1px solid black;
+}
+table {
+    border-collapse: collapse;
+}
+caption {
+    caption-side: bottom;
+}
+table {
+    width: 100%;
+    table-layout: fixed;
+    /* sab columns barabar width */
+}
+table {
+    width: 100%;
+    /* poori width */
+}
+
+th {
+    height: 50px;
+}
+th,
+td {
+    padding: 12px;
+}
+th {
+    text-align: center;
+}
+
+td {
+    text-align: left;
+}
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+tr:hover {
+    background-color: #f2f2f2;
+}
+.table-wrap {
+    overflow-x: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+.monuments {
+    transition-duration: 300ms;
+    transition-property:width;
+    transition-timing-function: ease;
+    transition-delay: 100ms;
+
+}
+.monuments:hover {
+    transition:cubic-bezier(0.175, 0.885, 0.32, 1.275);   
+    transition-property: initial;
+
+}
+/* ---------- District filter bar ---------- */
+.filter-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 25px auto;
+}
+
+.filter-bar label {
+    font-weight: bold;
+    color: #8b1a1a;
+}
+
+.filter-bar select {
+    padding: 8px 16px;
+    font-size: 16px;
+    border: 1px solid #8b1a1a;
+    border-radius: 20px;
+    background: white;
+    cursor: pointer;
+}
+
+/* ---------- District filter rules ---------- */
+body:has(#district option[value="agra"]:checked) .monuments>div:not(.agra),
+body:has(#district option[value="lucknow"]:checked) .monuments>div:not(.lucknow),
+body:has(#district option[value="varanasi"]:checked) .monuments>div:not(.varanasi),
+body:has(#district option[value="jhansi"]:checked) .monuments>div:not(.jhansi),
+body:has(#district option[value="ayodhya"]:checked) .monuments>div:not(.ayodhya),
+body:has(#district option[value="mathura"]:checked) .monuments>div:not(.mathura),
+body:has(#district option[value="prayagraj"]:checked) .monuments>div:not(.prayagraj),
+body:has(#district option[value="mirzapur"]:checked) .monuments>div:not(.mirzapur),
+body:has(#district option[value="banda"]:checked) .monuments>div:not(.banda),
+body:has(#district option[value="lalitpur"]:checked) .monuments>div:not(.lalitpur),
+body:has(#district option[value="kushinagar"]:checked) .monuments>div:not(.kushinagar) {
+    display: none;
+}
+
+/* ---------- Card hover + mobile ---------- */
+.monuments>div {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.monuments>div:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 900px) {
+    .monuments>div {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 550px) {
+    .monuments>div {
+        width: 100%;
+    }
+}
+/* ---------- Auto serial numbers ---------- */
+.monuments {
+    counter-reset: monument;
+}
+
+.monuments>div {
+    counter-increment: monument;
+}
+
+.monuments h3::before {
+    content: counter(monument) ". ";
 }
