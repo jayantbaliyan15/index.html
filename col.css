@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0; }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px 20px; }
+header h1 {
+    margin: 0;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgb(24, 80, 13);
+    color: rgb(245, 65, 0); }
+nav {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; }
+nav a {
+    text-decoration: none;
+    color: #8b1a1a;
+    border: 1px solid #8b1a1a;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold; }
+.monuments {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; }
+.monuments>div {
+    box-sizing: border-box;
+    width: calc(25% - 20px);
+    /* 4 cards ek row mein */
+    border: 1px solid gray;
+    border-radius: 8px;
+    overflow: hidden;
+    /* pocket ka effect — andar ki cheez bahar nahi nikalti */
+    padding-bottom: 10px; }
+.monuments img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block; }
+.monuments h3 {
+    padding: 8px 10px 0;
+    margin: 0; }
+.monuments ul {
+    padding: 8px 10px;
+    margin: 0; }
+.intro {
+    display: block;
+    margin: 20px auto;
+    width: 700px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 8px; }
+.explore {
+    text-align: center;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f5f0e1;
+    border-radius: 8px; }
+.explore h2 {
+    font-size: 28px; }
+.explore p {
+    font-size: 18px;
+    line-height: 1.6; }
+h2 {
+    text-align: center; }
+caption {
+    caption-side: bottom; }
+.monuments {
+    transition-duration: 300ms;
+    transition-property: width;
+    transition-timing-function: ease;
+    transition-delay: 100ms; }
+.monuments:hover {
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-property: initial; }
+.monuments>div {
+    transition: transform 0.3s, box-shadow 0.3s; }
+.monuments>div:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); }
+.monuments {
+    counter-reset: monument; }
+.monuments>div {
+    counter-increment: monument; }
